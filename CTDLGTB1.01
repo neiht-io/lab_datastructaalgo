@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<conio.h> 
+#include<math.h> 
+#define MAX 100 
+void nhap (int a[], int &n) { 
+	do { 
+		printf_s("\nNhập số phần tử, lưu ý số lượng phần tử lớn hơn 0 và nhỏ hơn 100:"); 
+		scanf_s("%d", &n); 
+		if(n <= 0 || n > MAX) { 
+		printf_s("\nSo phan tu khong hop le. Xin kiem tra lai !"); 
+		} 
+	}while(n <= 0 || n > MAX); 
+
+	for(int i = 0; i < n; i++) { 
+		printf_s("\nNhap a[%d]: ", i); 
+		scanf_s("%d", &a[i]); 
+	} 
+} 
+void xuat(int a[], int n) { 
+	for(int i = 0; i < n; i++) { 
+		printf_s("%4d", a[i]); 
+	} 
+} 
+
+int tongChan(int a[], int n) { 
+	if(n == 0) 
+		return 0; 
+
+	if (a[n - 1] % 2 == 0) {
+		return tongChan(a, n - 1) + a[n - 1];
+	}
+	else
+		return tongChan(a, n - 1);
+
+} 
+
+	
+int main() { 
+	int n; 
+	int a[MAX]; 
+	nhap(a, n); 
+	xuat(a, n); 
+	int tong = tongChan(a, n);
+	printf_s("\nTong cac so chan = %d", tong); 
+	return 0; 
+}
