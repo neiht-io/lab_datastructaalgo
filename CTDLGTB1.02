@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h> 
+
+float Tinh(float x, int n) { 
+	if(n == 0) 
+		return 0; 
+	if(n == 1) 
+		return x; 
+	else
+		return (1 + x/n) * Tinh(x, n - 1) - (x/n) * Tinh(x, n - 2); 
+} 
+int main() {
+	float x; 
+	int n; 
+	printf_s("\nNhap x: "); 
+	scanf_s("%f", &x); 
+	printf_s("\nNhap n: "); 
+	scanf_s("%d", &n); 
+	float ketqua = Tinh(x, n); 
+	printf_s("\nKet qua = %.2f", ketqua); 
+	return 0; 
+}
