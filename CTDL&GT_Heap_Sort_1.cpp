@@ -1,4 +1,4 @@
-//cre:
+//cre:https://duongdinh24.com/thuat-toan-heap-sort/#3_Cai_dat_thuat_toan_heap_sort_CC
 // Thuat toan sap xep vun dong
 // Hàm vun đống cho một đỉnh
 void heapify(int arr[], int n, int i){  // mảng arr, n - số phần tử, i - đỉnh cần vun đống
